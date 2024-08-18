@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kid-Friendly Drawing Pad with Calculator</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="card">
+    <div class="front">
+      <canvas id="canvas"></canvas>
+      <div class="toolbar">
+        <div class="color-picker">
+          <div data-color="#FF5733" style="background-color: #FF5733;"></div>
+          <div data-color="#33FF57" style="background-color: #33FF57;"></div>
+          <div data-color="#3357FF" style="background-color: #3357FF;"></div>
+          <div data-color="#FF33A5" style="background-color: #FF33A5;"></div>
+          <div data-color="#33FFF8" style="background-color: #33FFF8;"></div>
+          <div data-color="#F833FF" style="background-color: #F833FF;"></div>
+          <div data-color="#FFD700" style="background-color: #FFD700;"></div>
+          <div data-color="#F87B93" style="background-color: #F87B93;"></div>
+        </div>
+        <div class="tools">
+          <button id="clearBtn" title="Clear"><i class="fas fa-trash-alt"></i></button>
+          <button id="penBtn" title="Pen"><i class="fas fa-pencil-alt"></i></button>
+          <button id="eraseBtn" title="Eraser"><i class="fas fa-eraser"></i></button>
+          <select id="penSize">
+            <option value="2">Small</option>
+            <option value="5">Medium</option>
+            <option value="10">Large</option>
+          </select>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="back">
+      <div class="calculator">
+        <input type="text" id="calc-display" disabled>
+        <div id="calc-buttons">
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button>/</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>*</button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>-</button>
+          <button>C</button>
+          <button>0</button>
+          <button>=</button>
+          <button>+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button id="flipBtn" class="flip-btn"></button>
+    <div class="toggle-toolbar">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+
+</html>

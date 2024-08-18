@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+body {
+  margin: 0;
+  background: #FFCAD4;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 50px 10px;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 95%;
+  overflow: hidden;
+  
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 95%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.front {
+  background: #fff;
+}
+
+.back {
+  background: #fff;
+  transform: rotateY(180deg);
+}
+
+canvas {
+  border: 4px solid #ffd700;
+  border-radius: 15px;
+  touch-action: none;
+  width: 95%;
+  height: 95%;
+}
+
+.toolbar {
+  position: fixed;
+  bottom: -50%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border-radius: 15px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+  transition: bottom 0.3s ease;
+  width: 95%;
+}
+
+.toolbar.show {
+  bottom: -5%;
+}
+
+.tools {
+  display: flex;
+  gap: 15px;
+}
+
+button,
+select {
+  background-color: #F87B93;
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+button:active,
+select:active {
+  transform: scale(0.9);
+}
+
+button:hover,
+select:hover {
+  background-color: #ffc107;
+}
+
+button i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+select {
+  padding: 5px;
+  border-radius: 10px;
+  background: #fff;
+  border: 2px solid #ffd700;
+  font-size: 1rem;
+  color: #333;
+}
+
+.color-picker {
+  display: flex;
+  gap: 5px;
+}
+
+.color-picker div {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #ffd700;
+}
+
+.toggle-toolbar {
+  background-color: #F87B93;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.buttons{
+  position: fixed;
+  bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-toolbar i {
+  font-size: 1.5rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.toggle-toolbar.active i {
+  transform: rotate(180deg);
+}
+
+.flip-container {
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.calculator{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#flipBtn {
+  background-color: #ffc107;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+#flipBtn i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+#calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#calc-display {
+  width: 90%;
+  padding: 15px;
+  font-size: 2rem;
+  border-radius: 10px;
+  text-align: right;
+  margin-bottom: 20px;
+  border: 2px solid #ffd700;
+  background: white;
+}
+
+#calc-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 90%; /* Ensure the container uses full width */
+  justify-content: center;
+  align-items: center;
+}
+
+#calc-buttons > * {
+  flex: 1 1 calc(25% - 10px); /* Flex-grow, flex-shrink, and flex-basis */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+#calc-buttons button {
+  padding: 15px;
+  font-size: 1.5rem;
+  background: #F87B93;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#calc-buttons button:active {
+  background: #ffc107;
+}
+
+#calc-buttons button:nth-child(16) {
+  grid-column: span 2;
+}
